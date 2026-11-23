@@ -1,0 +1,113 @@
+.cartao-materia {
+  --materia-cor: var(--ion-color-primary);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-left: 4px solid var(--materia-cor);
+  border-radius: 16px;
+  background: var(--ion-card-background, var(--ion-background-color-step-50));
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.09);
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.cartao-materia:active {
+  transform: scale(0.99);
+}
+
+.cartao-materia__topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.cartao-materia__sigla {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--materia-cor) 15%, transparent);
+  color: var(--materia-cor);
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+}
+
+.cartao-materia__identificacao {
+  min-width: 0;
+  flex: 1;
+}
+
+.cartao-materia__nome {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cartao-materia__professor {
+  margin: 2px 0 0;
+  font-size: 0.78rem;
+  color: var(--ion-color-medium);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cartao-materia__seta {
+  color: var(--ion-color-medium);
+  font-size: 1.1rem;
+  flex: 0 0 auto;
+}
+
+.cartao-materia__numeros {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cartao-materia__media {
+  display: flex;
+  flex-direction: column;
+  min-width: 62px;
+}
+
+.cartao-materia__media strong {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--materia-cor);
+}
+
+.cartao-materia__rotulo {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ion-color-medium);
+}
+
+.cartao-materia__estado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  min-width: 0;
+}
+
+.cartao-materia__pendentes {
+  font-size: 0.76rem;
+  color: var(--ion-color-medium);
+}

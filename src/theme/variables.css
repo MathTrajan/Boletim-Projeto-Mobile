@@ -1,0 +1,57 @@
+:root {
+  --ion-color-primary: #1d4ed8;
+  --ion-color-primary-rgb: 29, 78, 216;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #1a45be;
+  --ion-color-primary-tint: #3460dc;
+
+  --ion-color-secondary: #d97706;
+  --ion-color-secondary-rgb: 217, 119, 6;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #bf6905;
+  --ion-color-secondary-tint: #dd851f;
+
+  --ion-color-tertiary: #7c3aed;
+  --ion-color-tertiary-rgb: 124, 58, 237;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #6d33d1;
+  --ion-color-tertiary-tint: #864fef;
+
+  --ion-font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  --ion-background-color: #f3f5f9;
+  --ion-background-color-rgb: 243, 245, 249;
+  --ion-card-background: #ffffff;
+  --ion-item-background: #ffffff;
+  --ion-toolbar-background: #ffffff;
+  --ion-tab-bar-background: #ffffff;
+
+  --boletim-gradiente-fim: #0e2f8f;
+}
+
+.ion-palette-dark {
+  --ion-color-primary: #5b8cff;
+  --ion-color-primary-rgb: 91, 140, 255;
+  --ion-color-primary-contrast: #00122e;
+  --ion-color-primary-contrast-rgb: 0, 18, 46;
+  --ion-color-primary-shade: #507be0;
+  --ion-color-primary-tint: #6c98ff;
+
+  --boletim-gradiente-fim: #1e3a8a;
+}
+
+ion-tab-bar {
+  padding-top: 2px;
+}
+
+ion-tab-button {
+  font-size: 0.72rem;
+}
+
+ion-toolbar ion-title {
+  font-weight: 700;
+}

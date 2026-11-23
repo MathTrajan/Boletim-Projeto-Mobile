@@ -1,0 +1,28 @@
+.item-avaliacao ion-item {
+  --padding-start: 16px;
+  --inner-padding-end: 12px;
+  --min-height: 62px;
+}
+
+.item-avaliacao__nome {
+  font-weight: 600;
+}
+
+.item-avaliacao__nota {
+  font-size: 1.15rem;
+  font-weight: 700;
+  min-width: 48px;
+  text-align: right;
+}
+
+.item-avaliacao__nota--boa {
+  color: var(--ion-color-success);
+}
+
+.item-avaliacao__nota--baixa {
+  color: var(--ion-color-danger);
+}
+
+.item-avaliacao__nota--pendente {
+  color: var(--ion-color-medium);
+}

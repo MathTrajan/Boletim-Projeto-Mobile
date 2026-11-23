@@ -1,0 +1,51 @@
+.item-compromisso ion-item {
+  --padding-start: 12px;
+  --inner-padding-end: 12px;
+  --min-height: 76px;
+}
+
+.item-compromisso__icone {
+  --tipo-cor: var(--ion-color-primary);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-inline: 10px 12px;
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--tipo-cor) 15%, transparent);
+  color: var(--tipo-cor);
+  font-size: 1.1rem;
+  flex: 0 0 auto;
+}
+
+.item-compromisso__titulo {
+  font-weight: 600;
+}
+
+.item-compromisso__data {
+  font-size: 0.76rem;
+}
+
+.item-compromisso__prazo {
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.item-compromisso--atrasado .item-compromisso__prazo {
+  color: var(--ion-color-danger);
+}
+
+.item-compromisso--proximo .item-compromisso__prazo {
+  color: var(--ion-color-warning-shade);
+}
+
+.item-compromisso--feito ion-label {
+  opacity: 0.55;
+}
+
+.item-compromisso--feito .item-compromisso__titulo {
+  text-decoration: line-through;
+}

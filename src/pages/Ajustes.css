@@ -1,0 +1,32 @@
+.ajustes ion-list {
+  border-radius: 14px;
+}
+
+.ajustes ion-list-header ion-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ion-color-medium);
+}
+
+.ajustes__dica {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  white-space: normal;
+  padding-block: 4px;
+}
+
+.ajustes__faixa {
+  width: 100%;
+  padding-inline: 0;
+}
+
+.ajustes__botao-apagar {
+  width: 100%;
+  margin-block: 4px;
+}
+
+.ajustes ion-segment {
+  width: 100%;
+}

@@ -1,0 +1,68 @@
+.semestre__carregando {
+  display: flex;
+  justify-content: center;
+  padding: 64px 0;
+}
+
+.semestre__corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px 16px 32px;
+}
+
+.semestre__painel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--ion-color-primary), var(--boletim-gradiente-fim));
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.25);
+  color: #ffffff;
+}
+
+.semestre__saudacao {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.92;
+}
+
+.semestre__indicadores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.semestre__indicador {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.semestre__numero {
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.semestre__rotulo {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.semestre__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.semestre ion-searchbar {
+  --box-shadow: none;
+  --background: var(--ion-background-color-step-100, #eaeff5);
+  padding-inline: 8px;
+}

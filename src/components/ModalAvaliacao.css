@@ -1,0 +1,17 @@
+.modal-avaliacao__corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 14px 16px 28px;
+}
+
+.modal-avaliacao__corpo ion-list {
+  margin: 0;
+  border-radius: 14px;
+}
+
+.modal-avaliacao__dica {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  padding-inline: 4px;
+}
