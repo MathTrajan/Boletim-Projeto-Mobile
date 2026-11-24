@@ -92,23 +92,21 @@ Centro Universitário UniGoiás. Professor Gabriel de Oliveira Silva.
 
 ## Documentação
 
-O enunciado da A2 não pede documento, mas a pasta `docs/` tem dois, cada um em
-Markdown e em Word:
-
-| Documento | Para quê |
-|---|---|
-| [Sistema](./docs/Sistema.md) · [.docx](./docs/Boletim-Sistema.docx) | Documentação técnica: tecnologias, arquitetura em camadas, modelo de dados, dicionário, regras de negócio e navegação |
-| [Apresentação](./docs/apresentacao.md) · [.docx](./docs/Boletim-Apresentacao.docx) | Documento de entrega: identificação, problema, requisitos atendidos, telas, testes e limitações |
+O relatório técnico do projeto está em
+[`docs/Projeto A2 - Boletim - Grupo - v1.0.docx`](./docs/), no formato de
+relatório acadêmico, com dezesseis seções: identificação, visão geral,
+objetivos, escopo, justificativa, riscos, custos, cronograma, equipe,
+aprovações, controle de versões, atas, levantamento de requisitos com doze
+casos de uso detalhados, projeto com modelo de dados e dicionário, algoritmos e
+fluxograma, desenvolvimento com trechos de código comentados, e testes com os
+trinta e quatro cenários unitários e os seis funcionais.
 
 ## Estrutura do repositório
 
 ```text
 Boletim-Projeto-Mobile/
 ├─ docs/
-│  ├─ Sistema.md                # documentação técnica do sistema
-│  ├─ apresentacao.md           # documento de apresentação
-│  ├─ Boletim-Sistema.docx      # os mesmos documentos em Word
-│  ├─ Boletim-Apresentacao.docx
+│  ├─ Projeto A2 - Boletim - Grupo - v1.0.docx   # relatório técnico
 │  └─ capturas/                 # capturas das telas usadas neste README
 ├─ public/            # ícone, favicon e manifesto do PWA
 ├─ scripts/           # gerador do ícone em PNG, sem dependência externa
