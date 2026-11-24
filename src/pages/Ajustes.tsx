@@ -18,7 +18,7 @@ import {
   IonToolbar,
 } from '@ionic/react';
 import type { JSX } from 'react';
-import { peopleOutline, phonePortraitOutline, trashOutline } from 'ionicons/icons';
+import { peopleOutline, phonePortraitOutline, sparklesOutline, trashOutline } from 'ionicons/icons';
 import { useState } from 'react';
 
 import AlertaConfirmacao from '../components/AlertaConfirmacao';
@@ -32,9 +32,17 @@ const INTEGRANTES = ['Matheus Trajano', 'Marcos Vinícius Moreira da Silva', 'Di
 const LIMITE_NOME = 40;
 
 export function Ajustes(): JSX.Element {
-  const { configuracao, materias, compromissos, carregando, atualizarConfiguracao, limparDados } =
-    useBoletim();
+  const {
+    configuracao,
+    materias,
+    compromissos,
+    carregando,
+    atualizarConfiguracao,
+    carregarExemplos,
+    limparDados,
+  } = useBoletim();
   const [confirmandoLimpeza, setConfirmandoLimpeza] = useState(false);
+  const [confirmandoExemplos, setConfirmandoExemplos] = useState(false);
   const [aviso, setAviso] = useState('');
 
   const [mediaDigitada, setMediaDigitada] = useState<string | null>(null);
@@ -53,6 +61,13 @@ export function Ajustes(): JSX.Element {
     await limparDados();
     setMediaDigitada(null);
     setAviso('Todos os dados do app foram apagados.');
+  }
+
+  const temDados = materias.length > 0 || compromissos.length > 0;
+
+  function aplicarExemplos(): void {
+    carregarExemplos();
+    setAviso('Semestre de exemplo carregado.');
   }
 
   const totalAvaliacoes = materias.reduce((total, materia) => total + materia.avaliacoes.length, 0);
@@ -163,10 +178,21 @@ export function Ajustes(): JSX.Element {
           <IonItem lines="none">
             <IonButton
               expand="block"
+              fill="outline"
+              className="ajustes__botao-apagar"
+              onClick={() => (temDados ? setConfirmandoExemplos(true) : aplicarExemplos())}
+            >
+              <IonIcon slot="start" icon={sparklesOutline} />
+              Carregar dados de exemplo
+            </IonButton>
+          </IonItem>
+          <IonItem lines="none">
+            <IonButton
+              expand="block"
               color="danger"
               fill="outline"
               className="ajustes__botao-apagar"
-              disabled={materias.length === 0 && compromissos.length === 0}
+              disabled={!temDados}
               onClick={() => setConfirmandoLimpeza(true)}
             >
               <IonIcon slot="start" icon={trashOutline} />
@@ -204,6 +230,15 @@ export function Ajustes(): JSX.Element {
             </IonLabel>
           </IonItem>
         </IonList>
+
+        <AlertaConfirmacao
+          aberto={confirmandoExemplos}
+          titulo="Carregar dados de exemplo"
+          mensagem="As matérias e a agenda atuais serão substituídas por um semestre de demonstração."
+          textoConfirmar="Substituir"
+          onCancelar={() => setConfirmandoExemplos(false)}
+          onConfirmar={aplicarExemplos}
+        />
 
         <AlertaConfirmacao
           aberto={confirmandoLimpeza}

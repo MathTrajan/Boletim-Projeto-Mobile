@@ -18,6 +18,25 @@ Aplicativo híbrido para o aluno acompanhar o próprio semestre: notas por avali
 
 ---
 
+## Telas do aplicativo
+
+<div align="center">
+
+| Semestre | Detalhe da matéria | Agenda |
+|:---:|:---:|:---:|
+| ![Semestre](docs/capturas/1-semestre.png) | ![Detalhe da matéria](docs/capturas/2-detalhe-materia.png) | ![Agenda](docs/capturas/3-agenda.png) |
+| Média geral, matérias em alerta e o cartão de cada disciplina | Nota necessária, contador de faltas e avaliações | Prazos ordenados, com atraso em destaque |
+
+| Nova avaliação | Nova matéria | Ajustes | Tema escuro |
+|:---:|:---:|:---:|:---:|
+| ![Nova avaliação](docs/capturas/4-modal-avaliacao.png) | ![Nova matéria](docs/capturas/5-nova-materia.png) | ![Ajustes](docs/capturas/6-ajustes.png) | ![Tema escuro](docs/capturas/7-tema-escuro.png) |
+| Modal de meia tela | Cor e carga horária | Regras do curso | A mesma tela no escuro |
+
+</div>
+
+> As telas acima usam o semestre de demonstração, que pode ser carregado em
+> **Ajustes → Dados salvos → Carregar dados de exemplo**.
+
 ## Visão geral
 
 Todo aluno faz a mesma conta de cabeça no meio do semestre: quanto preciso tirar
@@ -57,6 +76,7 @@ Centro Universitário UniGoiás. Professor Gabriel de Oliveira Silva.
 - **Regras configuráveis**: média mínima e percentual de falta permitido
 - **Tema claro e escuro**, seguindo o sistema ou forçado pelo usuário
 - **Apagar todos os dados** em uma ação única, com confirmação
+- **Semestre de demonstração** carregável com um toque, para avaliar o app sem digitar nada
 
 ## Stack
 
@@ -70,16 +90,29 @@ Centro Universitário UniGoiás. Professor Gabriel de Oliveira Silva.
 | Build | Vite 8 com `@vitejs/plugin-legacy` |
 | Testes | Vitest 5 · Testing Library · happy-dom |
 
+## Documento de apresentação
+
+O enunciado da A2 não pede documento, mas há um em
+[`docs/Boletim-Apresentacao.docx`](./docs/Boletim-Apresentacao.docx) com doze
+seções: identificação, problema, requisitos atendidos, telas, componentização,
+conceitos de React, persistência, regras de cálculo, testes, execução, decisões
+técnicas e limitações. A fonte em Markdown fica ao lado, em
+[`docs/apresentacao.md`](./docs/apresentacao.md).
+
 ## Estrutura do repositório
 
 ```text
 Boletim-Projeto-Mobile/
+├─ docs/
+│  ├─ apresentacao.md           # documento de apresentação, em Markdown
+│  ├─ Boletim-Apresentacao.docx # o mesmo documento em Word
+│  └─ capturas/                 # capturas das telas usadas neste README
 ├─ public/            # ícone, favicon e manifesto do PWA
 ├─ scripts/           # gerador do ícone em PNG, sem dependência externa
 └─ src/
    ├─ components/     # componentes reutilizáveis
    ├─ contextos/      # contexto e provedor do estado compartilhado
-   ├─ dados/          # catálogo de cores, tipos de compromisso e situações
+   ├─ dados/          # catálogo de cores e tipos, mais o semestre de exemplo
    ├─ hooks/          # useBoletim e useTema
    ├─ pages/          # as cinco telas
    ├─ servicos/       # única porta de entrada do @capacitor/preferences
@@ -132,16 +165,32 @@ npm test          # 34 testes de regra acadêmica e formatação
 npx tsc --noEmit  # verificação de tipos
 ```
 
-## Gerando o aplicativo nativo
+## Gerando o aplicativo Android
 
 O `capacitor.config.ts` já está configurado com o identificador
-`br.edu.boletim.mobile` e a pasta `dist` como origem.
+`br.edu.boletim.mobile` e a pasta `dist` como origem, e o `@capacitor/android`
+já está nas dependências.
 
 ```bash
 npm run build
-npx cap add android
+npx cap add android     # exige Node 22 ou mais novo
 npx cap sync
-npx cap open android
+npx cap open android    # abre o Android Studio para gerar o APK
+```
+
+Para compilar o APK pela linha de comando são necessários, além do projeto:
+
+| Requisito | Observação |
+|---|---|
+| JDK 17 ou 21 | O Gradle do Capacitor 8 ainda não aceita JDK 25 ou 26. Erro típico: `Unsupported class file major version` |
+| Android SDK | Instalado pelo SDK Manager do Android Studio, ou por `brew install --cask android-commandlinetools` |
+| Node 22 ou mais novo | A CLI do Capacitor recusa o Node 20. O restante do projeto roda em Node 20 |
+
+Com os três presentes:
+
+```bash
+cd android && ./gradlew assembleDebug
+# saída em android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
 As pastas `android/` e `ios/` não são versionadas: são centenas de arquivos

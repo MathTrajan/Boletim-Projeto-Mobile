@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { JSX, ReactNode } from 'react';
 
+import { compromissosDeExemplo, materiasDeExemplo } from '../dados/exemplos';
 import {
   CONFIGURACAO_PADRAO,
   apagarTudo,
@@ -154,6 +155,11 @@ export function BoletimProvider({ children }: { children: ReactNode }): JSX.Elem
     setConfiguracao((atual) => ({ ...atual, ...parcial }));
   }, []);
 
+  const carregarExemplos = useCallback(() => {
+    setMaterias(materiasDeExemplo());
+    setCompromissos(compromissosDeExemplo());
+  }, []);
+
   const limparDados = useCallback(async () => {
     try {
       await apagarTudo();
@@ -190,6 +196,7 @@ export function BoletimProvider({ children }: { children: ReactNode }): JSX.Elem
       alternarCompromisso,
       removerCompromisso,
       atualizarConfiguracao,
+      carregarExemplos,
       limparDados,
     }),
     [
@@ -209,6 +216,7 @@ export function BoletimProvider({ children }: { children: ReactNode }): JSX.Elem
       alternarCompromisso,
       removerCompromisso,
       atualizarConfiguracao,
+      carregarExemplos,
       limparDados,
     ],
   );

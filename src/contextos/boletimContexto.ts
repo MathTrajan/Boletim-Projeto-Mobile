@@ -19,6 +19,7 @@ export interface ValorBoletim {
   alternarCompromisso: (id: string) => void;
   removerCompromisso: (id: string) => void;
   atualizarConfiguracao: (parcial: Partial<Configuracao>) => void;
+  carregarExemplos: () => void;
   limparDados: () => Promise<void>;
 }
 

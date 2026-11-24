@@ -121,7 +121,7 @@ export function DetalheMateria(): JSX.Element {
         <div className="detalhe__corpo">
           <header className="detalhe__capa" style={{ '--materia-cor': materia.cor } as React.CSSProperties}>
             <div className="detalhe__capa-topo">
-              <div>
+              <div className="detalhe__identificacao">
                 <h2 className="detalhe__nome">{materia.nome}</h2>
                 <p className="detalhe__professor">{materia.professor || 'Professor não informado'}</p>
               </div>
