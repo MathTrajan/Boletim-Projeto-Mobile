@@ -90,22 +90,25 @@ Centro Universitário UniGoiás. Professor Gabriel de Oliveira Silva.
 | Build | Vite 8 com `@vitejs/plugin-legacy` |
 | Testes | Vitest 5 · Testing Library · happy-dom |
 
-## Documento de apresentação
+## Documentação
 
-O enunciado da A2 não pede documento, mas há um em
-[`docs/Boletim-Apresentacao.docx`](./docs/Boletim-Apresentacao.docx) com doze
-seções: identificação, problema, requisitos atendidos, telas, componentização,
-conceitos de React, persistência, regras de cálculo, testes, execução, decisões
-técnicas e limitações. A fonte em Markdown fica ao lado, em
-[`docs/apresentacao.md`](./docs/apresentacao.md).
+O enunciado da A2 não pede documento, mas a pasta `docs/` tem dois, cada um em
+Markdown e em Word:
+
+| Documento | Para quê |
+|---|---|
+| [Sistema](./docs/Sistema.md) · [.docx](./docs/Boletim-Sistema.docx) | Documentação técnica: tecnologias, arquitetura em camadas, modelo de dados, dicionário, regras de negócio e navegação |
+| [Apresentação](./docs/apresentacao.md) · [.docx](./docs/Boletim-Apresentacao.docx) | Documento de entrega: identificação, problema, requisitos atendidos, telas, testes e limitações |
 
 ## Estrutura do repositório
 
 ```text
 Boletim-Projeto-Mobile/
 ├─ docs/
-│  ├─ apresentacao.md           # documento de apresentação, em Markdown
-│  ├─ Boletim-Apresentacao.docx # o mesmo documento em Word
+│  ├─ Sistema.md                # documentação técnica do sistema
+│  ├─ apresentacao.md           # documento de apresentação
+│  ├─ Boletim-Sistema.docx      # os mesmos documentos em Word
+│  ├─ Boletim-Apresentacao.docx
 │  └─ capturas/                 # capturas das telas usadas neste README
 ├─ public/            # ícone, favicon e manifesto do PWA
 ├─ scripts/           # gerador do ícone em PNG, sem dependência externa
